@@ -53,12 +53,20 @@
   }
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .logo {
   overflow: hidden;
 }
 
 .logo img.logo-collapse {
-  animation-name: slide-out-left;
-  animation-duration: 1s;
-  animation-fill-mode: backwards;
+  animation: slide-out-left 1s backwards;
+  animation: spin 0.75s linear 0.5s;
 }
