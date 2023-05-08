@@ -29,7 +29,6 @@
   width: 40px;
   transition: width 1.5s ease;
   padding: 20px;
-  padding-top: 20px;
 }
 
 .btn-handler.expanded-arrow {
