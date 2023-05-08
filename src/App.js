@@ -40,7 +40,7 @@ const App = () => {
       </div>
       <div className="content">
         <Tooltip title={isExpand ? 'Collapse' : 'Expand'}>
-          <Button className={`btn-handler ${iconHandlerClass}`} shape="circle" icon={<ArrowLeftOutlined />} onClick={clickCollapseExpandBtn} />
+          <Button className={`btn-handler ${iconHandlerClass}`} size="large" shape="circle" icon={<ArrowLeftOutlined />} onClick={clickCollapseExpandBtn} />
         </Tooltip>
       </div>
     </div>
