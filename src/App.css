@@ -11,7 +11,6 @@
   justify-content: flex-start;
   align-items: stretch;
   gap: 24px;
-  padding: 20px;
   background-color: #fafafa;
 }
 
@@ -21,13 +20,16 @@
 }
 
 .sidebar.expanded-sidebar {
-  width: 220px;
+  width: 180px;
   transition: width 1.5s ease;
+  padding: 20px;
 }
 
 .sidebar.collapse-sidebar {
-  width: 64px;
+  width: 40px;
   transition: width 1.5s ease;
+  padding: 20px;
+  padding-top: 20px;
 }
 
 .btn-handler.expanded-arrow {
@@ -36,4 +38,27 @@
 
 .btn-handler.collapse-arrow {
   transform: rotate(180deg);
+}
+
+@keyframes slide-out-right {
+  0% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.logo {
+  overflow: hidden;
+}
+
+.logo img.logo-collapse {
+  animation-name: slide-out-right;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
 }
