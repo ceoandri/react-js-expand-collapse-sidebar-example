@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
+import logo from './Logo.svg';
+import { ArrowLeftOutlined } from '@ant-design/icons';
+import { Button, Tooltip } from 'antd';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [isExpand, setIsExpand] = useState(true);
+  const [sidebarHandlerClass, setSidebarHandlerClass] = useState('expanded-sidebar');
+  const [iconHandlerClass, setIconHandlerClass] = useState('expanded-arrow');
+
+  useEffect(() => {
+    if (isExpand) {
+      setSidebarHandlerClass('expanded-sidebar');
+      setIconHandlerClass('expanded-arrow');
+    } else {
+      setSidebarHandlerClass('collapse-sidebar');
+      setIconHandlerClass('collapse-arrow');
+    }
+  }, [isExpand]);
+
+  const clickCollapseExpandBtn = () => {
+    setIsExpand(!isExpand);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className={`sidebar ${sidebarHandlerClass}`}>
+        M
+      </div>
+      <div className="content">
+        <Tooltip title={isExpand ? 'Collapse' : 'Expand'}>
+          <Button className={`btn-handler ${iconHandlerClass}`} shape="circle" icon={<ArrowLeftOutlined />} onClick={clickCollapseExpandBtn} />
+        </Tooltip>
+      </div>
     </div>
   );
 }
