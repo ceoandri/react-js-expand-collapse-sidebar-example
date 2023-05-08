@@ -40,7 +40,7 @@
   transform: rotate(180deg);
 }
 
-@keyframes slide-out-right {
+@keyframes slide-out-left {
   0% {
     transform: translateX(0%);
   }
@@ -58,7 +58,7 @@
 }
 
 .logo img.logo-collapse {
-  animation-name: slide-out-right;
+  animation-name: slide-out-left;
   animation-duration: 1s;
   animation-fill-mode: backwards;
 }
