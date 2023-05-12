@@ -41,11 +41,11 @@ const App = () => {
         </div>
         <div className="menu">
           <div className="menu-item active">
-            <img className="menu-icon" src={userGroup}></img>
+            <img className="menu-icon" src={userGroup} alt="menu-icon"></img>
             <label className={isExpand ? 'menu-label label-expand' : 'menu-label label-collapse'}>People & Users</label>
           </div>
           <div className="menu-item">
-            <img className="menu-icon" src={calendar}></img>
+            <img className="menu-icon" src={calendar} alt="menu-icon"></img>
             <label className={isExpand ? 'menu-label label-expand' : 'menu-label label-collapse'}>Calendar Setting</label>
           </div>
         </div>
