@@ -52,20 +52,71 @@
   }
 }
 
+@keyframes show-in {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.1;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
 }
 
-.logo {
+.logo, .menu {
   overflow: hidden;
+  cursor: pointer;
 }
 
 .logo img.logo-collapse {
   animation: slide-out-left 1s backwards;
   animation: spin 0.75s linear 0.5s;
+}
+
+.menu .menu-item {
+  height: 16px;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px;
+  color: #767676;
+  margin-bottom: 4px;
+}
+
+.menu .menu-item.active, .menu .menu-item:hover {
+  border-radius: 8px;
+  background-color: rgba(60, 60, 60, 0.1);
+  color: #3c3c3c;
+}
+
+.menu-icon {
+  margin-right: 9.6px;
+}
+
+.menu-label {
+  overflow: hidden;
+  cursor: pointer;
+  min-width: calc(156px - 22.4px);
+}
+
+.menu-label.label-collapse {
+  opacity: 0;
+}
+
+.menu-label.label-expand {
+  animation: show-in 1s;
 }
